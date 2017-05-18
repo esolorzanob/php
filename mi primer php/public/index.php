@@ -9,9 +9,7 @@
 
 
 <?php
-$nombre = "Esteban";
-echo "<h1 class='nombre'> Bienvenido $nombre </h1>";
-echo "Hello World!";
+
 ?>
 
 </body>
