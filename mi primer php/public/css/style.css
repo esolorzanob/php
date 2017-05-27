@@ -1,3 +1,24 @@
-.nombre {
-    color: red;
+
+.rojo {
+    background-color: red;
+}
+.verde {
+	background-color: green;
+}
+.amarillo {
+	background-color: yellow;
+}
+.azul {
+	background-color: blue;
+}
+.morado{
+	background-color: purple;
+}
+.foto {
+	height: 60px;
+	width: 80px;
+}
+#cuadro {
+	height: 80px;
+	width: 80px;
 }
