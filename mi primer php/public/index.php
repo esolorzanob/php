@@ -6,8 +6,9 @@
 <body>
 <h1>My first PHP page</h1>
 <a href="practicaAPI.php">PracticaAPI</a>
+<a href="bases.php">PracticaBases</a>
 <?php
-
+$persona = new stdClass();
 
 ?>
 
