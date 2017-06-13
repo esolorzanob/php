@@ -16,17 +16,8 @@ $dbname = "universidad";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-	echo "error";
-} else{
-	echo "Connected successfully!!";
-}
 
-$sql = "select c.nombre as 'nombreClase', p.nombre, p.apellidos
-from clase as c, profesor as p
-where c.Profesor_carnet = p.carnet";
+$sql = "select * from usuario";
 $result = $conn->query($sql);
 if ($result->num_rows > 0 ) {	
 	while($row = mysqli_fetch_assoc($result)) {
@@ -40,18 +31,28 @@ $conn->close();
 $val = current($estudiantes);
 	echo "<table border=1>";
 	echo "<tr>
-		  <th>NombreClase</th>
 		  <th>Nombre</th>
-	      <th>Apellidos</th>
-		  <th>Direccion</th>
+		  <th>Apellidos</th>
+	      <th>Direccion</th>
+		  <th>Telefono</th>
+		  <th>Email</th>
+		  <th>Editar</th>
 		  
 		  </tr>";
 	while($val){		
 		echo "<tr>
-			<td>".$val["nombreClase"]."</td>
-			<td>".$val["nombre"]."</td>
+			<td>".$val["nombre"]."</td>			
 			<td>".$val["apellidos"]."</td>
-			<td></td>
+			<td>".$val["direccion"]."</td>
+			<td>".$val["telefono"]."</td>
+			<td>".$val["email"]."</td>
+			<td>
+			<form action=\"editar.php\" method=\"POST\">
+			<input type=\"hidden\" 
+			name=\"id\" value=\"".$val["idusuario"]."\">
+			<input type=\"submit\" value=\"editar\">
+			</form>
+			</td>
 			</tr>";
 		$val = next($estudiantes);
 	}
