@@ -10,7 +10,7 @@
 <a href="login.php">Log In</a>
 <a href="registro.php">Registro</a>
 <?php
-$persona = new stdClass();
+echo "<a href=\"testRedirect.php?id=1\">Redirect</a>";
 
 ?>
 

@@ -11,31 +11,25 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "universidad";
+$dbname = "parqueoupi";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-	echo "error";
-} else{
-	echo "Connected successfully!!";
-}
 
-$sql = "update usuario set nombre='".$_POST["nombre"].
-	   "',apellidos='".$_POST["apellidos"].
-	   "',direccion='".$_POST["direccion"].
-	   "',telefono='".$_POST["telefono"].
-	   "',email='".$_POST["email"].
+
+$sql = "update usuarios set Nombre='".$_POST["nombre"].
+	   "',Apellidos='".$_POST["apellidos"].
+	   "',Direccion='".$_POST["direccion"].
+	   "',Telefono='".$_POST["telefono"].
+	   "',Email='".$_POST["email"].
 	   "',password='".$_POST["password"].	   
-	   "' where idusuario='".$_POST["id"]."';";
+	   "' where idUsuarios='".$_POST["id"]."';";
 
 if ($conn->query($sql) === TRUE ) {	
 	echo "<p>Usuario editado con éxito</p>";
 } else {
-    echo "Error al registrar usuario " .$conn->error;
+    echo "Error al registrar usuario ".$conn->error;
 }
 $conn->close();
 

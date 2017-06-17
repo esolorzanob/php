@@ -11,13 +11,13 @@ $estudiantes = array();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "universidad";
+$dbname = "parqueoupi";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-$sql = "select * from usuario";
+$sql = "select * from usuarios";
 $result = $conn->query($sql);
 if ($result->num_rows > 0 ) {	
 	while($row = mysqli_fetch_assoc($result)) {
@@ -41,15 +41,15 @@ $val = current($estudiantes);
 		  </tr>";
 	while($val){		
 		echo "<tr>
-			<td>".$val["nombre"]."</td>			
-			<td>".$val["apellidos"]."</td>
-			<td>".$val["direccion"]."</td>
-			<td>".$val["telefono"]."</td>
-			<td>".$val["email"]."</td>
+			<td class='rojo'>".$val["Nombre"]."</td>			
+			<td>".$val["Apellidos"]."</td>
+			<td>".$val["Direccion"]."</td>
+			<td>".$val["Telefono"]."</td>
+			<td>".$val["Email"]."</td>
 			<td>
 			<form action=\"editar.php\" method=\"POST\">
 			<input type=\"hidden\" 
-			name=\"id\" value=\"".$val["idusuario"]."\">
+			name=\"id\" value=\"".$val["idUsuarios"]."\">
 			<input type=\"submit\" value=\"editar\">
 			</form>
 			</td>

@@ -7,23 +7,30 @@
 <body>
 <h1>Practica Log In</h1>
 <?php
-$usuario = $_POST["username"];
+$usuario = $_POST["name"];
 $pass = $_POST["password"];
 $usuarioGuardado = [];
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "universidad";
+$dbname = "parqueoupi";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$sql = "select * from usuario where username='$usuario'";
+$sql = "select * from usuarios where email='$usuario'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0 ) {		
 	$usuarioGuardado = mysqli_fetch_array($result);
 	
 	if($usuarioGuardado["password"] == $pass){
-	echo "<p>Bienvenido al sistema, ". $usuarioGuardado["nombre"]."</p>";
+	echo "<p>Bienvenido al sistema, ". $usuarioGuardado["Nombre"]."</p>";
+	if($usuarioGuardado["Rol"] == 0){
+		echo "<a href=\"index.php\">Principal</a>
+			  <a href=\"listaUsuarios.php\">Listar Usuarios</a>";
+	}else{
+		echo "<a href=\"index.php\">Principal</a>
+			  <a href=\"miPerfil.php\">Mi perfil</a>";
+	}
 	
 	}else{
 	echo "<p>Password incorrecto</p>";

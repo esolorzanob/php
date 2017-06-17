@@ -7,7 +7,7 @@
 <body>
 <h1>Practica Log In</h1>
 <?php
-$usuario = $_POST["chayito"];
+$usuario = $_POST["name"];
 $pass = $_POST["password"];
 
 echo "<p>El username es $usuario";

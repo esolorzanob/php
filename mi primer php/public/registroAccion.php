@@ -29,7 +29,7 @@ telefono, email, password) values ('".$_POST["nombre"]."',
 '".$_POST["apellidos"]."','".$_POST["direccion"]."','".$_POST["telefono"]."',
 '".$_POST["email"]."','".$_POST["password"]."');";
 
-if ($conn->query($sql) === TRUE ) {	
+if ($conn->query($sql) == TRUE ) {	
 	echo "<p>Usuario registrado con éxito</p>";
 } else {
     echo "Error al registrar usuario " .$conn->error;
