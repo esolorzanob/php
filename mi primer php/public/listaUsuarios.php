@@ -7,6 +7,11 @@
 <body>
 <h1>Practica Bases</h1>
 <?php
+if(empty($_GET["id"])){
+	header('Refresh: 3; URL=login.php');
+	echo "<h1 class=\"rojo\">Usted no está autorizado para ver esta página</h1>";
+}else{
+	
 $estudiantes = array();
 $servername = "localhost";
 $username = "root";
@@ -15,9 +20,13 @@ $dbname = "parqueoupi";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-$sql = "select * from usuarios";
+$traerUsuario = "Select * from usuarios 
+where idUsuarios=".$_GET["id"];
+$result = $conn->query($traerUsuario);
+if ($result->num_rows > 0 ) {		
+	$usuarioGuardado = mysqli_fetch_array($result);
+	if($usuarioGuardado["Rol"] == 0){
+		$sql = "select * from usuarios";
 $result = $conn->query($sql);
 if ($result->num_rows > 0 ) {	
 	while($row = mysqli_fetch_assoc($result)) {
@@ -50,14 +59,21 @@ $val = current($estudiantes);
 			<form action=\"editar.php\" method=\"POST\">
 			<input type=\"hidden\" 
 			name=\"id\" value=\"".$val["idUsuarios"]."\">
-			<input type=\"submit\" value=\"editar\">
+						<input type=\"submit\" value=\"editar\">
 			</form>
 			</td>
 			</tr>";
 		$val = next($estudiantes);
 	}
 	echo "</table>";
+	}else{
+		header('Refresh: 3; URL=login.php');
+	echo "<h1 class=\"rojo\">Usted no está autorizado para ver esta página</h1>";
+	}
+}
 
+
+}
 ?>
 
 </body>

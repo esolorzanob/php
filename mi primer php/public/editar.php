@@ -8,9 +8,8 @@
 <h1>Editar Usuario</h1>
 <h2>Cambie la información en el formulario y haga click en cambiar
 <?php
-
-
-$servername = "localhost";
+if(!empty($_POST["id"])){
+	$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "parqueoupi";
@@ -35,6 +34,12 @@ Contraseña: <input type=\"password\" name=\"password\" value=\"".$usuarioGuarda
     echo "<p>El usuario no se encuentra en el sistema</p>";
 }
 $conn->close();
+}else{
+	header('Refresh: 3; URL=login.php');
+	echo "<h1 class=\"rojo\">Usted no está autorizado para ver esta página</h1>";
+}
+
+
 
 ?>
 

@@ -26,10 +26,11 @@ if ($result->num_rows > 0 ) {
 	echo "<p>Bienvenido al sistema, ". $usuarioGuardado["Nombre"]."</p>";
 	if($usuarioGuardado["Rol"] == 0){
 		echo "<a href=\"index.php\">Principal</a>
-			  <a href=\"listaUsuarios.php\">Listar Usuarios</a>";
+			  <a href=\"listaUsuarios.php?id=".$usuarioGuardado["idUsuarios"]."\">Listar Usuarios</a>
+			  <a href=\"registro.php?id=".$usuarioGuardado["idUsuarios"]."\">Registrar Usuarios</a>";
 	}else{
 		echo "<a href=\"index.php\">Principal</a>
-			  <a href=\"miPerfil.php\">Mi perfil</a>";
+			  <a href=\"miPerfil.php?id=".$usuarioGuardado["idUsuarios"]."\">Mi perfil</a>";
 	}
 	
 	}else{

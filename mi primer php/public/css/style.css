@@ -22,3 +22,11 @@
 	height: 80px;
 	width: 80px;
 }
+table{
+	width: 80%;
+	text-align: center;
+}
+
+table, th, td{
+	border-collapse: collapse;
+}

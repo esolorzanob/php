@@ -16,8 +16,6 @@ $dbname = "parqueoupi";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-
-
 $sql = "update usuarios set Nombre='".$_POST["nombre"].
 	   "',Apellidos='".$_POST["apellidos"].
 	   "',Direccion='".$_POST["direccion"].
