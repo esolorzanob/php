@@ -1,0 +1,5 @@
+1. Agregar a la función promedio un echo que imprima la nota mayor del conjunto de notas.
+2. Crear una función que genere un numero aleatorio entre 10000 y 50000 para simular el monto de una factura. A este monto hay que calcularle el 10% de impuesto de servicio y el 13% de impuesto de ventas.
+La función debe imprimir el monto original de la factura, el monto del impuesto de servicio, el monto del impuesto de ventas y el total a pagar de la factura.
+3. Cree una función que contenga el arreglo [“a”,”b”,”c”,”d”]. Debe imprimir el arreglo en forma inversa, o sea [“d”,”c”,”b”,”a”];
+4. Crear una función que genere un arreglo de tamaño 10 con números aleatorios del 1 al 20. Una vez creado el arreglo, debe ordenarlo de mayor a menor.
