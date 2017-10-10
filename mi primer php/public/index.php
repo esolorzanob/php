@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>My first PHP page</h1>
-<a href="practicaAPI.php">PracticaAPI</a>
+<a href="formularioPokemon.html">PracticaAPI</a>
 <a href="bases.php">PracticaBases</a>
 <a href="login.php">Log In</a>
 <a href="registro.php">Registro</a>

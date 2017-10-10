@@ -1,19 +1,66 @@
 
-.rojo {
+.fire {
     background-color: red;
 }
-.verde {
+.grass {
 	background-color: green;
 }
-.amarillo {
+.electric {
 	background-color: yellow;
 }
-.azul {
+.ice {
 	background-color: blue;
 }
-.morado{
+.poison{
+	background-color:lightgreen;
+}
+.fighting{
+	background-color: goldenrod;
+}
+.ground{
+	background-color:brown;
+}
+.rock{
+	background-color:grey;
+}
+.posion{
+	background-color:lightgreen;
+}
+.bug{
+	background-color:pink;
+}
+.ghost{
+	background-color:lightgoldenrodyellow;
+}
+.steel{
+	background-color:lightslategray;
+}
+.water{
+	background-color:skyblue;
+}
+.psychic{
 	background-color: purple;
 }
+.dragon{
+	background-color: darkgreen;
+}
+.dark{
+	background-color: darkblue;
+}
+.fairy{
+	background-color: lightsalmon;
+}
+.unknown{
+	background-color:olive;
+}
+.shadow{
+	background-color:darkmagenta;
+}
+.flying{
+	background-color:lightskyblue;
+}
+
+
 .foto {
 	height: 60px;
 	width: 80px;
@@ -29,4 +76,27 @@ table{
 
 table, th, td{
 	border-collapse: collapse;
+}
+
+.principal{
+	margin: 25px 50px 0 100px;
+}
+.nombre{
+	margin-top: 30px;
+	font-size: 1.5em;
+	font-style: italic;
+	float: left;
+}
+
+.derecha{
+	float: right;
+}
+.izquierda{
+	margin-right: 200px;
+}
+.pokemonContainer{
+	display: inline-flex;
+}
+.pokeImagen{
+	float: right;
 }
